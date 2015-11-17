@@ -1,0 +1,15 @@
+{
+  "name": "SmashupGenerator",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aaron Siebersma",
+  "license": "ISC",
+  "dependencies": {
+    "immutable": "^3.7.4",
+    "react": "^0.13.3"
+  }
+}

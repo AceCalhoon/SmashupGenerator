@@ -6,11 +6,7 @@ var update = require('react-addons-update');
 
 var FactionFilter = React.createClass({
     getInitialState: function() {
-        var selected = this.props.selected != null && this.props.selected != undefined
-            ? this.props.selected
-            : this.props.initialSelected || true;
-            
-        return {selected: selected};  
+        return {};  
     },
     handleChange: function(event) {
         if(this.props.selected == null && this.props.selected == undefined) {
@@ -21,7 +17,11 @@ var FactionFilter = React.createClass({
     render: function() {
         return (
             <ol>
-                <li><input type="checkbox" checked={this.state.selected} onChange={this.handleChange} />{this.props.name}</li>
+                <li>
+                    <input type="checkbox"
+                        checked={this.props.selected}
+                        onChange={this.handleChange} />{this.props.name}
+                </li>
                 <li>description</li>
             </ol>
         );
@@ -39,15 +39,29 @@ var SetFilter = React.createClass({
         }
     },
     handleSetChange: function(set) {
-        this.props.onSetChange(set, !this.props.selected, null);
+        this.props.onSetChange(set, !this.props.selected, this.props.factionSelection);
+    },
+    handleFactionChange: function(set, faction) {
+        var changes = {};
+        changes[faction] = {
+            $set: !this.props.factionSelection[faction]
+        }
+
+        var newFactions = update(this.props.factionSelection, changes);
+        
+        this.props.onSetChange(set, this.props.selected, newFactions);
     },
     render: function() {
         var that = this; 
-        var factionNodes = [];/*this.props.set.get('factions').map(function(faction) {
+        var factionNodes = this.props.set.get('factions').map(function(faction) {
             return (
-                <li key={faction.get('faction')}><FactionFilter name={faction.get('faction')} onSelectionChanged={that.handleFactionSelectionChanged}/></li>
+                <li key={faction.get('faction')}>
+                    <FactionFilter name={faction.get('faction')}
+                        selected={that.props.factionSelection[faction.get('faction')]}
+                        onSelectionChanged={that.handleFactionChange.bind(that, that.props.set.get('set'), faction.get('faction'))}/>
+                </li>
             );
-        });*/
+        });
         return (
             <div>
                 <p>
@@ -69,10 +83,14 @@ var GameFilter = React.createClass({
         var filter = {};
         var sets = this.props.sets;
         sets.forEach(function(set) {
+            var factions = {};
+            set.get('factions').forEach(function(faction) {
+                factions[faction.get('faction')] = true;
+            });
+
             filter[set.get('set')] = {
                 selected: true,
-                //TODO: Build initial faction state.
-                factions: null
+                factions: factions
             };
         });
         return {
@@ -80,7 +98,6 @@ var GameFilter = React.createClass({
         };
     },
     handleSetChange: function(set, setSelected, factionsSelected) {
-    console.log('handleChange', set, setSelected, factionsSelected);
         var changes = {};
         changes[set] = {
             selected: {$set: setSelected},
@@ -96,7 +113,12 @@ var GameFilter = React.createClass({
         var that = this;
         var setNodes = this.props.sets.map(function(set) {
             return (
-                <li key={set.get('set')}><SetFilter set={set} selected={that.state.filter[set.get('set')].selected} onSetChange={that.handleSetChange} /></li>
+                <li key={set.get('set')}>
+                    <SetFilter set={set}
+                        selected={that.state.filter[set.get('set')].selected}
+                        factionSelection={that.state.filter[set.get('set')].factions}
+                        onSetChange={that.handleSetChange} />
+                </li>
             );
         });
         return (

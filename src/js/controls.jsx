@@ -1,6 +1,8 @@
 var factiondb = require('./faction-db.js');
 
 var React = require('react');
+var ReactDOM = require('react-dom');
+var update = require('react-addons-update');
 
 var FactionFilter = React.createClass({
     getInitialState: function() {
@@ -28,18 +30,19 @@ var FactionFilter = React.createClass({
 
 var SetFilter = React.createClass({
     getInitialState: function() {
-        return {};
+        return {
+        };
     },
-    handleChange: function(event) {
-        this.props.onChange(event.target.set, event.target.checked);
-    },
-    handleFactionSelectionChanged: function(selected) {
-        if(selected) {
-            this.setState({selected: true});
+    getDefaultProps: function() {
+        return {
+            onSetChange: function(set, setSelected, factionsSelected) { }
         }
     },
+    handleSetChange: function(set) {
+        this.props.onSetChange(set, !this.props.selected, null);
+    },
     render: function() {
-        var that = this;
+        var that = this; 
         var factionNodes = [];/*this.props.set.get('factions').map(function(faction) {
             return (
                 <li key={faction.get('faction')}><FactionFilter name={faction.get('faction')} onSelectionChanged={that.handleFactionSelectionChanged}/></li>
@@ -47,7 +50,12 @@ var SetFilter = React.createClass({
         });*/
         return (
             <div>
-                <p><input type="checkbox" data-set={this.props.set.get('set')} checked={this.props.selected} onChange={this.handleChange} /> {this.props.set.get('set')}</p>
+                <p>
+                    <input type="checkbox"
+                        checked={this.props.selected}
+                        onChange={this.handleSetChange.bind(this, this.props.set.get('set'))} />
+                    {this.props.set.get('set')}
+                </p>
                 <ol>
                     {factionNodes}
                 </ol>
@@ -58,26 +66,37 @@ var SetFilter = React.createClass({
 
 var GameFilter = React.createClass({
     getInitialState: function() {
-        var selected = {};
+        var filter = {};
         var sets = this.props.sets;
         sets.forEach(function(set) {
-            selected[set.get('set')] = true;
+            filter[set.get('set')] = {
+                selected: true,
+                //TODO: Build initial faction state.
+                factions: null
+            };
         });
         return {
-            selected: selected
+            filter: filter
         };
     },
-    handleChange: function(set, checked) {
-    console.log('handleChange', set, checked);
-        var selection = this.state.selected;
-        selection[set].selected = checked;
-        this.setState({selected: selection});
+    handleSetChange: function(set, setSelected, factionsSelected) {
+    console.log('handleChange', set, setSelected, factionsSelected);
+        var changes = {};
+        changes[set] = {
+            selected: {$set: setSelected},
+            factions: {$set: factionsSelected}
+        };
+
+        var newFilter = update(this.state.filter, changes);
+        this.setState({
+            filter: newFilter
+        });
     },
     render: function() {
         var that = this;
         var setNodes = this.props.sets.map(function(set) {
             return (
-                <li key={set.get('set')}><SetFilter set={set} selected={that.state.selected[set.get('set')]} onChange={that.handleChange} /></li>
+                <li key={set.get('set')}><SetFilter set={set} selected={that.state.filter[set.get('set')].selected} onSetChange={that.handleSetChange} /></li>
             );
         });
         return (
@@ -89,5 +108,5 @@ var GameFilter = React.createClass({
 });
 
 module.exports.RenderFilter = function(container) {
-    React.render(<GameFilter sets={factiondb.getSets()} />, container);
+    ReactDOM.render(<GameFilter sets={factiondb.getSets()} />, container);
 }

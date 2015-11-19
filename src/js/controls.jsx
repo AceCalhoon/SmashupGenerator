@@ -18,9 +18,11 @@ var FactionFilter = React.createClass({
         return (
             <ol>
                 <li>
-                    <input type="checkbox"
-                        checked={this.props.selected}
-                        onChange={this.handleChange} />{this.props.name}
+                    <label>
+                        <input type="checkbox"
+                            checked={this.props.selected}
+                            onChange={this.handleChange} />{this.props.name}
+                    </label>
                 </li>
                 <li>description</li>
             </ol>
@@ -65,10 +67,12 @@ var SetFilter = React.createClass({
         return (
             <div>
                 <p>
-                    <input type="checkbox"
-                        checked={this.props.selected}
-                        onChange={this.handleSetChange.bind(this, this.props.set.get('set'))} />
-                    {this.props.set.get('set')}
+                    <label>
+                        <input type="checkbox"
+                            checked={this.props.selected}
+                            onChange={this.handleSetChange.bind(this, this.props.set.get('set'))} />
+                        {this.props.set.get('set')}
+                    </label>
                 </p>
                 <ol>
                     {factionNodes}

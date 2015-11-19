@@ -9,9 +9,6 @@ var FactionFilter = React.createClass({
         return {};  
     },
     handleChange: function(event) {
-        if(this.props.selected == null && this.props.selected == undefined) {
-            this.setState({selected: event.target.checked});
-        }
         this.props.onSelectionChanged(event.target.checked);
     },
     render: function() {
@@ -21,10 +18,10 @@ var FactionFilter = React.createClass({
                     <label>
                         <input type="checkbox"
                             checked={this.props.selected}
-                            onChange={this.handleChange} />{this.props.name}
+                            onChange={this.handleChange} />{this.props.faction.get('faction')}
                     </label>
                 </li>
-                <li>description</li>
+                <li>{this.props.faction.get('description')}</li>
             </ol>
         );
     }
@@ -69,7 +66,8 @@ var SetFilter = React.createClass({
         var factionNodes = this.props.set.get('factions').map(function(faction) {
             return (
                 <li key={faction.get('faction')}>
-                    <FactionFilter name={faction.get('faction')}
+                    <FactionFilter
+                        faction={faction}
                         selected={that.props.factionSelection[faction.get('faction')]}
                         onSelectionChanged={that.handleFactionChange.bind(that, that.props.set.get('set'), faction.get('faction'))}/>
                 </li>

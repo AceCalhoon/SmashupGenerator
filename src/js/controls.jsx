@@ -5,6 +5,16 @@ var ReactDOM = require('react-dom');
 var update = require('react-addons-update');
 
 var FactionFilter = React.createClass({
+    propTypes: {
+        faction: React.PropTypes.object,
+        selected: React.PropTypes.bool,
+        onSelectionChanged: React.PropTypes.func
+    },
+    getDefaultProps: function() {
+        return {
+            onSelectionChanged: function(set, faction) {}
+        }
+    },
     getInitialState: function() {
         return {};  
     },
@@ -28,14 +38,20 @@ var FactionFilter = React.createClass({
 });
 
 var SetFilter = React.createClass({
-    getInitialState: function() {
-        return {
-        };
+    propTypes: {
+        set: React.PropTypes.object,
+        selected: React.PropTypes.bool,
+        factionSelection: React.PropTypes.object,
+        onSetChange: React.PropTypes.func
     },
     getDefaultProps: function() {
         return {
             onSetChange: function(set, setSelected, factionsSelected) { }
         }
+    },
+    getInitialState: function() {
+        return {
+        };
     },
     handleSetChange: function(set) {
         var newSelected = !this.props.selected;
@@ -92,6 +108,15 @@ var SetFilter = React.createClass({
 });
 
 var GameFilter = React.createClass({
+    propTypes: {
+        sets: React.PropTypes.object,
+        onFilterChange: React.PropTypes.func
+    },
+    getDefaultProps: function() {
+        return {
+            onFilterChange: function(filter) { }
+        }
+    },
     getInitialState: function() {
         var filter = {};
         var sets = this.props.sets;
@@ -121,6 +146,8 @@ var GameFilter = React.createClass({
         this.setState({
             filter: newFilter
         });
+        
+        this.props.onFilterChange(this.state.filter);
     },
     render: function() {
         var that = this;

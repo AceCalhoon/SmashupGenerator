@@ -41,7 +41,18 @@ var SetFilter = React.createClass({
         }
     },
     handleSetChange: function(set) {
-        this.props.onSetChange(set, !this.props.selected, this.props.factionSelection);
+        var newSelected = !this.props.selected;
+        
+        var changes = {};
+        for(var key in this.props.factionSelection) {
+            changes[key] = {
+                $set: newSelected
+            }
+        }
+        
+        var newFactions = update(this.props.factionSelection, changes);
+    
+        this.props.onSetChange(set, newSelected, newFactions);
     },
     handleFactionChange: function(set, faction) {
         var changes = {};

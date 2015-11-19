@@ -21,7 +21,17 @@
 	"tasks": [
 		{
 			"taskName": "default",
-			"isBuildCommand": true
+			"isBuildCommand": true,
+			"problemMatcher": {
+				"owner": "grunt",
+				"fileLocation": "absolute",
+				"pattern": {
+					"regexp": "^>> Error: .* Line ([0-9]*): (.*) while parsing file: (.*)$",
+					"file": 3,
+					"line": 1,
+					"message": 2 
+				}
+			}
 		}
 		
 	]

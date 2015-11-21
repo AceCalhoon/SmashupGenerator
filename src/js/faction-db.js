@@ -79,6 +79,26 @@ var dbmap = Immutable.fromJS([
         set: 'The Obligatory Cthulhu Set',
         faction: 'Miskatonic University',
         description: "Go 'Pods! Go 'Pods! Welcome to your first days at Miskatonic University! We will shape you into a student of the sciences both natural and... otherwise. Certainly our courses seem intense, but there always has to be a small sacrifice for knowledge. \"Ex Ignorantia Ad Sapientiam; E Luce Ad Tenebras.\""
+    },
+    {
+        set: 'Science Fiction Double Feature',
+        faction: 'Cyborg Apes',
+        description: "In a daring raid on a top secret research facility, apes stole the latest in cybernetic enhancements, and are now enacting their centuries-old plan to take over the world! Combining their natural athleticism and powerful strength with high-tech augmentations, these apes will go bananas all over your opponents!"
+    },
+    {
+        set: 'Science Fiction Double Feature',
+        faction: 'Shapeshifters',
+        description: "Far below the surface of the earth, strange amorphous creatures have developed a thriving world, based on the manipulation of their own genetics. Now they plan to apply that knowledge to conquer our world above. Taking samples of the most powerful creatures and warriors they can find, these shapeshifters can use the best of whoever they copy."
+    },
+    {
+        set: 'Science Fiction Double Feature',
+        faction: 'Super Spies',
+        description: "The shadow war between International Secret Intelligence and the evil HAVOC (Henchman and Villains of Chaoes) continues. HAVOC's schemes threaten the world, from weather-changing satellites to lasers mounted on secret moon bases, they can only be opposed by the daring agents of the ISI. Using the latest in espionage technology, the ISI will be able to foil your opponents' plans."
+    },
+    {
+        set: 'Science Fiction Double Feature',
+        faction: 'Time Travelers',
+        description: "The time stream has been compromised. Robots from the future mingle with pirates, extinct dinosaurs move with magical wizards... everything is all smashed up! That's where the Time Patrol steps in. Organized in 1976 and led by the enigmatic Doctor When, the Time Patrol works to keep time flowing... in the manner they deem best."
     }
 ]);
 

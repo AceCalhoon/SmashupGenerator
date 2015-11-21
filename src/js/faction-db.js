@@ -99,6 +99,26 @@ var dbmap = Immutable.fromJS([
         set: 'Science Fiction Double Feature',
         faction: 'Time Travelers',
         description: "The time stream has been compromised. Robots from the future mingle with pirates, extinct dinosaurs move with magical wizards... everything is all smashed up! That's where the Time Patrol steps in. Organized in 1976 and led by the enigmatic Doctor When, the Time Patrol works to keep time flowing... in the manner they deem best."
+    },
+    {
+        set: 'Monster Smash',
+        faction: 'Giant Ants',
+        description: "The future of atomic energy was never supposed to have this disastrous effect! Mutant ants spill out from giant hills, intent on destroying our homes and all else that stands in their colony's way! The ants work as a great hive mind, spreading their power around as necessary to ensure their atomic-age victory!"
+    },
+    {
+        set: 'Monster Smash',
+        faction: 'Mad Scientists',
+        description: "Working in the lab, late one night, my eyes beheld an eerie sight. For my monster from his slab, began to rise. And suddenly to my surprise, he did the Smash... Up. The Mad Scientists, intent on unlocking the mysteries of life, have instead released death in the form of powerful creations! Their toying with nature can empower various minions but at what cost? (Apologies to Bobby Pickett)"
+    },
+    {
+        set: 'Monster Smash',
+        faction: 'Vampires',
+        description: "From the dark gothic recesses of ancient brooding castles, draped in black velvet, and probably listening to Bauhaus, the children of the night come to drink deep from Smash Up! Draining the very life from their victims, these cursed souls will bain power upon destroying your opponents' minions."
+    },
+    {
+        set: 'Monster Smash',
+        faction: 'Werewolves',
+        description: "From howling at the moon, to cowing their pack, or ripping through town, the werewolves are here to assert their place as the alphas of Smash Up. Using their explosive power to beat down opponents, the werewolves will not relent in their drive to hunt and dominate all that stand against them."
     }
 ]);
 

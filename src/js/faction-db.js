@@ -119,6 +119,26 @@ var dbmap = Immutable.fromJS([
         set: 'Monster Smash',
         faction: 'Werewolves',
         description: "From howling at the moon, to cowing their pack, or ripping through town, the werewolves are here to assert their place as the alphas of Smash Up. Using their explosive power to beat down opponents, the werewolves will not relent in their drive to hunt and dominate all that stand against them."
+    },
+    {
+        set: 'Pretty Pretty Smash Up',
+        faction: 'Fairies',
+        description: "From deep in the magical glades come these little sprites, bringing magical wishes and pixie dust to your plans for world domination. Don't judge them by their size. The fairies magic gives you great options in how to deal with your enemies."
+    },
+    {
+        set: 'Pretty Pretty Smash Up',
+        faction: 'Mythic Horses',
+        description: "The power of togetherness shows through in Horses, whose mighty herds races across the land, trampling any who stand in their way. Not only normal horses, but pegasi, sea-horses and more will join the fight for the base! Remember that friendship is... smashable!"
+    },
+    {
+        set: 'Pretty Pretty Smash Up',
+        faction: 'Kitty Cats',
+        description: "Can haz base? Kitty Cats have the power to compel those of weak will to do what they wish... and the power to have billions of internet memes. Perhaps those are the key? Either way, the Kitty Cats will use their alluring power to dominate the fight at any base. Then head out for a night of jazzy music in the alleys!"
+    },
+    {
+        set: 'Pretty Pretty Smash Up',
+        faction: 'Princesses',
+        description: "Dream a dream of ruling over your enemies! Princesses will make every wish come true through the power of pure love and happiness. Which can be used, oddly, to order everyone about, and even destroy your enemies. Don't be fooled: these innocent looking beauties are few in number, but royal, strong and determined!"
     }
 ]);
 

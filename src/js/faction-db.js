@@ -139,6 +139,11 @@ var dbmap = Immutable.fromJS([
         set: 'Pretty Pretty Smash Up',
         faction: 'Princesses',
         description: "Dream a dream of ruling over your enemies! Princesses will make every wish come true through the power of pure love and happiness. Which can be used, oddly, to order everyone about, and even destroy your enemies. Don't be fooled: these innocent looking beauties are few in number, but royal, strong and determined!"
+    },
+    {
+        set: 'The Big Geeky Box',
+        faction: 'Geeks',
+        description: "Featuring Geek and Sundry, this deck will allow you to geek out like never before. Geek Dinosaurs, Geek Spies, you name it!"
     }
 ]);
 

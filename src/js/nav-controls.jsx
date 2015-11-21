@@ -20,7 +20,7 @@ var AppControls = React.createClass({
     },
     getDefaultProps: function() {
         return {
-            displayMode: DisplayModes.expanded,
+            displayMode: DisplayModes.Expanded,
             onSmash: function() {},
             onFilter: function() {},
             onAbout: function() {}
@@ -31,10 +31,10 @@ var AppControls = React.createClass({
     },
     render: function() {
         return (
-            <nav class={this.props.displayMode}>
-                <button class="smash" onclick={onSmash}>Smash!</button>
-                <button class="show-filter" onclick={onFilter}>Filter</button>
-                <button class="show-about" onclick={onAbout}>About</button>
+            <nav className={this.props.displayMode}>
+                <button className="smash" onclick={this.props.onSmash}>Smash!</button>
+                <button className="show-filter" onclick={this.props.onFilter}>Filter</button>
+                <button className="show-about" onclick={this.props.onAbout}>About</button>
             </nav>
         );
     }

@@ -80,18 +80,17 @@ var SetFilter = React.createClass({
         
         this.props.onSetChange(set, setSelected, newFactions);
     },
-    render: function() {
-        var that = this; 
+    render: function() { 
         var factionNodes = this.props.set.get('factions').map(function(faction) {
             return (
                 <li key={faction.get('faction')}>
                     <FactionFilter
                         faction={faction}
-                        selected={that.props.factionSelection[faction.get('faction')]}
-                        onSelectionChanged={that.handleFactionChange.bind(that, that.props.set.get('set'), faction.get('faction'))}/>
+                        selected={this.props.factionSelection[faction.get('faction')]}
+                        onSelectionChanged={this.handleFactionChange.bind(this, this.props.set.get('set'), faction.get('faction'))}/>
                 </li>
             );
-        });
+        }.bind(this));
         return (
             <div>
                 <p>
@@ -153,17 +152,16 @@ var GameFilter = React.createClass({
         this.props.onFilterChange(this.state.filter);
     },
     render: function() {
-        var that = this;
         var setNodes = this.props.sets.map(function(set) {
             return (
                 <li key={set.get('set')}>
                     <SetFilter set={set}
-                        selected={that.state.filter[set.get('set')].selected}
-                        factionSelection={that.state.filter[set.get('set')].factions}
-                        onSetChange={that.handleSetChange} />
+                        selected={this.state.filter[set.get('set')].selected}
+                        factionSelection={this.state.filter[set.get('set')].factions}
+                        onSetChange={this.handleSetChange} />
                 </li>
             );
-        });
+        }.bind(this));
         return (
             <ol>
                 {setNodes}

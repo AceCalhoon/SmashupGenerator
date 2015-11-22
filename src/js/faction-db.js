@@ -79,6 +79,71 @@ var dbmap = Immutable.fromJS([
         set: 'The Obligatory Cthulhu Set',
         faction: 'Miskatonic University',
         description: "Go 'Pods! Go 'Pods! Welcome to your first days at Miskatonic University! We will shape you into a student of the sciences both natural and... otherwise. Certainly our courses seem intense, but there always has to be a small sacrifice for knowledge. \"Ex Ignorantia Ad Sapientiam; E Luce Ad Tenebras.\""
+    },
+    {
+        set: 'Science Fiction Double Feature',
+        faction: 'Cyborg Apes',
+        description: "In a daring raid on a top secret research facility, apes stole the latest in cybernetic enhancements, and are now enacting their centuries-old plan to take over the world! Combining their natural athleticism and powerful strength with high-tech augmentations, these apes will go bananas all over your opponents!"
+    },
+    {
+        set: 'Science Fiction Double Feature',
+        faction: 'Shapeshifters',
+        description: "Far below the surface of the earth, strange amorphous creatures have developed a thriving world, based on the manipulation of their own genetics. Now they plan to apply that knowledge to conquer our world above. Taking samples of the most powerful creatures and warriors they can find, these shapeshifters can use the best of whoever they copy."
+    },
+    {
+        set: 'Science Fiction Double Feature',
+        faction: 'Super Spies',
+        description: "The shadow war between International Secret Intelligence and the evil HAVOC (Henchman and Villains of Chaoes) continues. HAVOC's schemes threaten the world, from weather-changing satellites to lasers mounted on secret moon bases, they can only be opposed by the daring agents of the ISI. Using the latest in espionage technology, the ISI will be able to foil your opponents' plans."
+    },
+    {
+        set: 'Science Fiction Double Feature',
+        faction: 'Time Travelers',
+        description: "The time stream has been compromised. Robots from the future mingle with pirates, extinct dinosaurs move with magical wizards... everything is all smashed up! That's where the Time Patrol steps in. Organized in 1976 and led by the enigmatic Doctor When, the Time Patrol works to keep time flowing... in the manner they deem best."
+    },
+    {
+        set: 'Monster Smash',
+        faction: 'Giant Ants',
+        description: "The future of atomic energy was never supposed to have this disastrous effect! Mutant ants spill out from giant hills, intent on destroying our homes and all else that stands in their colony's way! The ants work as a great hive mind, spreading their power around as necessary to ensure their atomic-age victory!"
+    },
+    {
+        set: 'Monster Smash',
+        faction: 'Mad Scientists',
+        description: "Working in the lab, late one night, my eyes beheld an eerie sight. For my monster from his slab, began to rise. And suddenly to my surprise, he did the Smash... Up. The Mad Scientists, intent on unlocking the mysteries of life, have instead released death in the form of powerful creations! Their toying with nature can empower various minions but at what cost? (Apologies to Bobby Pickett)"
+    },
+    {
+        set: 'Monster Smash',
+        faction: 'Vampires',
+        description: "From the dark gothic recesses of ancient brooding castles, draped in black velvet, and probably listening to Bauhaus, the children of the night come to drink deep from Smash Up! Draining the very life from their victims, these cursed souls will bain power upon destroying your opponents' minions."
+    },
+    {
+        set: 'Monster Smash',
+        faction: 'Werewolves',
+        description: "From howling at the moon, to cowing their pack, or ripping through town, the werewolves are here to assert their place as the alphas of Smash Up. Using their explosive power to beat down opponents, the werewolves will not relent in their drive to hunt and dominate all that stand against them."
+    },
+    {
+        set: 'Pretty Pretty Smash Up',
+        faction: 'Fairies',
+        description: "From deep in the magical glades come these little sprites, bringing magical wishes and pixie dust to your plans for world domination. Don't judge them by their size. The fairies magic gives you great options in how to deal with your enemies."
+    },
+    {
+        set: 'Pretty Pretty Smash Up',
+        faction: 'Mythic Horses',
+        description: "The power of togetherness shows through in Horses, whose mighty herds races across the land, trampling any who stand in their way. Not only normal horses, but pegasi, sea-horses and more will join the fight for the base! Remember that friendship is... smashable!"
+    },
+    {
+        set: 'Pretty Pretty Smash Up',
+        faction: 'Kitty Cats',
+        description: "Can haz base? Kitty Cats have the power to compel those of weak will to do what they wish... and the power to have billions of internet memes. Perhaps those are the key? Either way, the Kitty Cats will use their alluring power to dominate the fight at any base. Then head out for a night of jazzy music in the alleys!"
+    },
+    {
+        set: 'Pretty Pretty Smash Up',
+        faction: 'Princesses',
+        description: "Dream a dream of ruling over your enemies! Princesses will make every wish come true through the power of pure love and happiness. Which can be used, oddly, to order everyone about, and even destroy your enemies. Don't be fooled: these innocent looking beauties are few in number, but royal, strong and determined!"
+    },
+    {
+        set: 'The Big Geeky Box',
+        faction: 'Geeks',
+        description: "Featuring Geek and Sundry, this deck will allow you to geek out like never before. Geek Dinosaurs, Geek Spies, you name it!"
     }
 ]);
 

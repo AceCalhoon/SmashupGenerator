@@ -32,9 +32,9 @@ var AppControls = React.createClass({
     render: function() {
         return (
             <nav className={this.props.displayMode}>
-                <button className="smash" onclick={this.props.onSmash}>Smash!</button>
-                <button className="show-filter" onclick={this.props.onFilter}>Filter</button>
-                <button className="show-about" onclick={this.props.onAbout}>About</button>
+                <button className="smash" onClick={this.props.onSmash}>Smash!</button>
+                <button className="show-filter" onClick={this.props.onFilter}>Filter</button>
+                <button className="show-about" onClick={this.props.onAbout}>About</button>
             </nav>
         );
     }

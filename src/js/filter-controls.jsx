@@ -1,7 +1,6 @@
 var factiondb = require('./faction-db.js');
 
 var React = require('react');
-var ReactDOM = require('react-dom');
 var update = require('react-addons-update');
 
 var FactionFilter = React.createClass({
@@ -170,6 +169,4 @@ var GameFilter = React.createClass({
     }
 });
 
-module.exports.RenderFilter = function(container) {
-    ReactDOM.render(<GameFilter sets={factiondb.getSets()} />, container);
-}
+module.exports.GameFilter = GameFilter;

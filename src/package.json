@@ -9,6 +9,7 @@
   "author": "Aaron Siebersma",
   "license": "ISC",
   "dependencies": {
+    "classnames": "^2.2.0",
     "immutable": "^3.7.4",
     "react": "^0.14.2",
     "react-addons-update": "^0.14.2",

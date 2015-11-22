@@ -1,3 +1,3 @@
-var controls = require('./filter-controls.jsx');
+var controls = require('./generator-controls.jsx');
 
-controls.RenderFilter(document.getElementsByClassName('filter')[0]);
+controls.RenderGenerator(document.getElementsByClassName('generator-container')[0]);

@@ -1,6 +1,7 @@
 var factiondb = require('./faction-db.js');
 
 var React = require('react');
+var PureRenderMixin = require('react-addons-pure-render-mixin');
 var update = require('react-addons-update');
 
 var FactionFilter = React.createClass({
@@ -20,6 +21,7 @@ var FactionFilter = React.createClass({
     handleChange: function(event) {
         this.props.onSelectionChanged(event.target.checked);
     },
+    mixins: [PureRenderMixin],
     render: function() {
         return (
             <ol>
@@ -79,6 +81,7 @@ var SetFilter = React.createClass({
         
         this.props.onSetChange(set, setSelected, newFactions);
     },
+    mixins: [PureRenderMixin],
     render: function() { 
         var factionNodes = this.props.set.get('factions').map(function(faction) {
             return (
@@ -150,6 +153,7 @@ var GameFilter = React.createClass({
         
         this.props.onFilterChange(newFilter);
     },
+    mixins: [PureRenderMixin],
     render: function() {
         var setNodes = this.props.sets.map(function(set) {
             return (

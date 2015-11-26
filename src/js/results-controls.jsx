@@ -1,4 +1,5 @@
 var React = require('react');
+var PureRenderMixin = require('react-addons-pure-render-mixin');
 
 var ResultView = React.createClass({
     propTypes: {
@@ -7,6 +8,7 @@ var ResultView = React.createClass({
     getInitialState: function() {
         return {};
     },
+    mixins: [PureRenderMixin],
     render: function() {
         var teamNodes = this.props.teams.map(function(team, i) {
             return (

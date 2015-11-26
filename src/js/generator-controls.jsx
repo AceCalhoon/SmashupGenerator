@@ -1,5 +1,7 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
+var PureRenderMixin = require('react-addons-pure-render-mixin');
+
 var Nav = require('./nav-controls.jsx');
 var Filter = require('./filter-controls.jsx');
 var Results = require('./results-controls.jsx');
@@ -48,6 +50,7 @@ var Generator = React.createClass({
     handleFilterChange: function(filter) {
         this.setState({filter: filter});
     },
+    mixins: [PureRenderMixin],
     render: function() {
         var navDisplayMode = Nav.DisplayModes.Expanded;
         switch(this.state.state) {

@@ -1,4 +1,5 @@
 var React = require('react');
+var PureRenderMixin = require('react-addons-pure-render-mixin');
 
 var DisplayModes = {
     //Initial state. Big smash button, little filter.
@@ -29,6 +30,7 @@ var AppControls = React.createClass({
     getInitialState: function() {
         return {};
     },
+    mixins: [PureRenderMixin],
     render: function() {
         return (
             <nav className={this.props.displayMode}>

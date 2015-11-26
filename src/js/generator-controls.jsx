@@ -2,10 +2,12 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var Nav = require('./nav-controls.jsx');
 var Filter = require('./filter-controls.jsx');
+var Results = require('./results-controls.jsx');
 
 var classNames = require('classnames');
 
 var factiondb = require('./faction-db.js');
+var ScenarioGenerator = require('./generator.js');
 
 var ControlStates = {
     Intro: 'intro',
@@ -16,18 +18,35 @@ var ControlStates = {
 
 var Generator = React.createClass({
     getInitialState: function() {
+        var filter = {};
+        var sets = factiondb.getSets();
+        sets.map(function(set) {
+            var setFilter = {selected: true, factions: {}};
+            
+            set.get('factions').map(function(faction) {
+                setFilter.factions[faction.get('faction')] = true;
+            });
+            
+            filter[set.get('set')] = setFilter;
+        });
         return {
-            state: ControlStates.Intro
+            state: ControlStates.Intro,
+            teams: [],
+            filter: filter
         };
     },
     handleSmash: function() {
-        this.setState({state: ControlStates.Results});
+        var teams = ScenarioGenerator.generateScenario(this.state.filter);
+        this.setState({state: ControlStates.Results, teams: teams});
     },
     handleFilter: function() {
         this.setState({state: ControlStates.Filter});
     },
     handleAbout: function() {
         this.setState({state: ControlStates.About});
+    },
+    handleFilterChange: function(filter) {
+        this.setState({filter: filter});
     },
     render: function() {
         var navDisplayMode = Nav.DisplayModes.Expanded;
@@ -52,10 +71,12 @@ var Generator = React.createClass({
                 </section>
                 <section className="filter">
                     <Filter.GameFilter
-                        sets={factiondb.getSets()} />
+                        sets={factiondb.getSets()}
+                        onFilterChange={this.handleFilterChange} />
                 </section>
                 <section className="results">
-                    Results
+                    <Results.ResultView
+                        teams={this.state.teams} />
                 </section>
                 <section className="about">
                     About

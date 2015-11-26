@@ -148,7 +148,7 @@ var GameFilter = React.createClass({
             filter: newFilter
         });
         
-        this.props.onFilterChange(this.state.filter);
+        this.props.onFilterChange(newFilter);
     },
     render: function() {
         var setNodes = this.props.sets.map(function(set) {

@@ -26,13 +26,18 @@ function generateScenario(filter) {
     var teams = [];
     while(factions.length > 2) {
         var randIndex = getRandomInt(0, factions.length);
-        var faction1 = popIndex(factions, randIndex);
+        var selectedFactions = [];
+        selectedFactions.push(popIndex(factions, randIndex));
         randIndex = getRandomInt(0, factions.length);
-        var faction2 = popIndex(factions, randIndex);
+        selectedFactions.push(popIndex(factions, randIndex));
+        
+        selectedFactions = selectedFactions.sort(function(a,b) {
+            return a.faction.localeCompare(b.faction);
+        });
         
         teams.push({
-            Faction1: faction1,
-            Faction2: faction2
+            Faction1: selectedFactions[0],
+            Faction2: selectedFactions[1]
         })
     }
 

@@ -148,7 +148,8 @@ var dbmap = Immutable.fromJS([
 ]);
 
 module.exports.db = dbmap;
-module.exports.getSets = function() {
+module.exports.getSets = getSets;
+function getSets() {
     var sets = dbmap.map(function(x) {
         return Immutable.fromJS({
             set: x.get('set'),
@@ -163,4 +164,16 @@ function getSetFactions(setName) {
     return dbmap
         .filter(function(x) { return x.get('set') === setName; })
         .sortBy(function(x) { return x.get('faction'); });
+}
+
+module.exports.getSet = function(setName) {
+    return getSets()
+        .filter(function(x) { return x.get('set') === setName; })
+        .get(0);
+}
+
+module.exports.getFaction = function(factionName) {
+    return dbmap
+        .filter(function(x) { return x.get('faction') === factionName; })
+        .get(0);
 }

@@ -1,5 +1,15 @@
 @import "reset.less";
 
+@font-face {
+  font-family: 'Curse-Casual-JVE';
+    src:  url('../Fonts/Curse-Casual-JVE.ttf.woff') format('woff'),
+    url('../Fonts/Curse-Casual-JVE.ttf.svg#Curse-Casual-JVE') format('svg'),
+    url('../Fonts/Curse-Casual-JVE.ttf.eot'),
+    url('../Fonts/Curse-Casual-JVE.eot?#iefix') format('embedded-opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
 .generator {
     @expanded-nav-height: 45vh;
     @compact-nav-height: 15vh;
@@ -14,11 +24,27 @@
     }
     
     &.intro {
-        padding-bottom: @expanded-nav-height;
-        
         section.welcome {
             display: block;
             height: 100vh - @expanded-nav-height;
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            h1 {
+                font-family: 'Curse-Casual-JVE', sans-serif;
+                font-size: 20vh;
+                text-transform: uppercase;
+                font-weight: bold;
+                letter-spacing: .05em;
+                
+                transform: rotateX(-10deg) rotateY(45deg);
+                
+                &::first-letter {
+                    font-size: 135%;
+                }
+            }
         }
     }
     

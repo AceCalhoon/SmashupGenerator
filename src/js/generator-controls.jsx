@@ -70,7 +70,7 @@ var Generator = React.createClass({
         return (
             <div className={classNames('generator', this.state.state)}>
                 <section className="welcome">
-                    Welcome
+                    <h1>Smashing!</h1>
                 </section>
                 <section className="filter">
                     <Filter.GameFilter

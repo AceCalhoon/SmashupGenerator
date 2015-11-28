@@ -52,6 +52,12 @@ module.exports = function(grunt) {
                     cwd: '../src',
                     src: ['*', '!*.html', '!*.inc', '!offline-manifest.appcache', '!package.json'],
                     dest: '../output/'
+                },
+                {
+                    expand: true,
+                    cwd: '../src/Fonts',
+                    src: ['**', '!Source/**'],
+                    dest: '../output/Fonts'
                 }
             ]
         }

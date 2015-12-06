@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic&e=.css);
+
 @import "reset.less";
 
 @font-face {
@@ -13,6 +15,33 @@
 .generator {
     @expanded-nav-height: 45vh;
     @compact-nav-height: 15vh;
+    @standard-spacing: 1vh;
+    
+    font-family: 'Open Sans', sans-serif;
+    font-size: 4vh;
+    
+    .headings() {
+        font-family: 'Curse-Casual-JVE', sans-serif;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: .05em;
+        
+        &::first-letter {
+            font-size: 135%;
+        }
+    }
+    
+    h1 {
+        .headings();
+        font-size: 20vh;
+    }
+    
+    h2 {
+        .headings();
+        font-size: 8vh;
+        text-transform: capitalize;
+    }
+    
     
     box-sizing: border-box;
     height: 100vh;
@@ -33,17 +62,7 @@
             justify-content: center;
             
             h1 {
-                font-family: 'Curse-Casual-JVE', sans-serif;
-                font-size: 20vh;
-                text-transform: uppercase;
-                font-weight: bold;
-                letter-spacing: .05em;
-                
                 transform: rotateX(-10deg) rotateY(45deg);
-                
-                &::first-letter {
-                    font-size: 135%;
-                }
             }
         }
     }
@@ -51,6 +70,37 @@
     &.filter {
         section.filter {
             display: block;
+            
+            li {
+                padding: @standard-spacing;
+            }
+            
+            @checkbox-width: 3.5vh;
+            label {
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                
+                input[type=checkbox] {
+                    margin: 0;
+                    margin-right: @standard-spacing;
+                    width: @checkbox-width;
+                    height: @checkbox-width;
+                    box-sizing: border-box;
+                }
+                
+                
+            }
+            
+            .faction-name {
+                font-weight: bold;
+            }
+            
+            .faction-description {
+                padding-left: @checkbox-width + @standard-spacing;
+                margin: @standard-spacing 0;
+                cursor: pointer;
+            }
         }
     }
     
@@ -75,7 +125,7 @@
         width: 100%;
         height: @compact-nav-height;
         
-        padding: 1vh;
+        padding: @standard-spacing;
         
         display: flex;
         flex-flow: row wrap;
@@ -89,7 +139,7 @@
         }
         
         button + button {
-            margin-left: 1vh;
+            margin-left: @standard-spacing;
         }
         
         &.expanded {
@@ -97,7 +147,7 @@
             
             button.smash {
                 height: 65%;
-                margin-bottom: 1vh;
+                margin-bottom: @standard-spacing;
                 flex: 1 100%;
             }
             

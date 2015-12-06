@@ -16,7 +16,7 @@ module.exports = function(grunt) {
                 cleancss: true,
             },
             files: {
-                '../output/Stylesheets/site-<%= pkg.version %>.min.css' : '../src/Stylesheets/**/*.less'
+                '../output/Stylesheets/site-<%= pkg.version %>.min.css' : '../src/Stylesheets/**/site.less'
             }
         }
     },

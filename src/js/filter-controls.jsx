@@ -24,16 +24,18 @@ var FactionFilter = React.createClass({
     mixins: [PureRenderMixin],
     render: function() {
         return (
-            <ol>
-                <li>
-                    <label>
-                        <input type="checkbox"
-                            checked={this.props.selected}
-                            onChange={this.handleChange} />{this.props.faction.get('faction')}
-                    </label>
-                </li>
-                <li>{this.props.faction.get('description')}</li>
-            </ol>
+            <div>
+                <label className="faction-name">
+                    <input type="checkbox"
+                        checked={this.props.selected}
+                        onChange={this.handleChange} />{this.props.faction.get('faction')}
+                </label>
+                <div
+                    className="faction-description"
+                    onClick={this.props.onSelectionChanged.bind(this, !this.props.selected)}>
+                    {this.props.faction.get('description')}
+                </div>
+            </div>
         );
     }
 });
@@ -94,15 +96,17 @@ var SetFilter = React.createClass({
             );
         }.bind(this));
         return (
-            <div>
-                <p>
+            <div className="set-filter">
+                <h2>
                     <label>
                         <input type="checkbox"
                             checked={this.props.selected}
                             onChange={this.handleSetChange.bind(this, this.props.set.get('set'))} />
-                        {this.props.set.get('set')}
+                        <span className="set-name">
+                            {this.props.set.get('set')}
+                        </span>
                     </label>
-                </p>
+                </h2>
                 <ol>
                     {factionNodes}
                 </ol>

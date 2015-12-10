@@ -8,7 +8,9 @@ var ResultView = React.createClass({
         teams: React.PropTypes.array
     },
     getInitialState: function() {
-        return {};
+        return {
+            expanded: null
+        };
     },
     mixins: [PureRenderMixin],
     render: function() {
@@ -48,9 +50,9 @@ var ResultView = React.createClass({
             );
         });
         return (
-            <ul className="results">
+            <ol className="results">
                 {teamNodes}
-            </ul>
+            </ol>
         );
     }
 });

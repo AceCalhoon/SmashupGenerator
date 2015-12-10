@@ -107,6 +107,48 @@
     &.results {
         section.results {
             display: block;
+            
+            @number-width: 5vh;
+            ol.results {
+                counter-reset: team-counter;
+                
+                & > li {
+                    display: flex;
+                    align-items: baseline;
+                }
+                
+                & > li:before {
+                    font-family: 'Curse-Casual-JVE', sans-serif;
+                    font-size: 1.25em;
+                    content: counter(team-counter);
+                    counter-increment: team-counter;
+                    
+                    flex-basis: @number-width;
+                    width: @number-width;
+                    text-align: right;
+                    margin-right: @standard-spacing;
+                }
+                
+                & > li + li {
+                    margin-top: @standard-spacing;
+                }
+            }
+            
+            .faction-summary {
+                display: inline;
+                
+                .faction-name {
+                    display: inline;
+                }
+                
+                .faction-description, .set-name {
+                    display: none;
+                }
+            }
+            
+            .faction-summary + .faction-summary:before {
+                content: ' and ';
+            }
         }
     }
     

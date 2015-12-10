@@ -31,13 +31,29 @@
         }
     }
     
+    .stroked-text() {
+        /* Source: https://css-tricks.com/examples/TextStroke/ */
+        color: white;
+        text-shadow:
+            .03em .03em 0 #000,
+            /* Simulated effect for Firefox and Opera
+            and nice enhancement for WebKit */
+        -.01em -.01em 0 #000,  
+            .01em -.01em 0 #000,
+        -.01em  .01em 0 #000,
+            .01em  .01em 0 #000;
+    }
+    
     h1 {
         .headings();
         font-size: 20vh;
+        
+        .stroked-text();
     }
     
     h2 {
         .headings();
+        .stroked-text();
         font-size: 8vh;
         text-transform: capitalize;
     }

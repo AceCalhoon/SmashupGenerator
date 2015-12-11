@@ -24,9 +24,9 @@ var ResultView = React.createClass({
                 <li key={i}>
                     <ul>
                         <li className="faction-summary">
-                            <div className="faction-name">
+                            <h2 className="faction-name">
                                 {faction1.get('faction')}
-                            </div>
+                            </h2>
                             <div className="faction-description">
                                 {faction1.get('description')}
                             </div>
@@ -35,9 +35,9 @@ var ResultView = React.createClass({
                             </div>
                         </li>
                         <li className="faction-summary">
-                            <div className="faction-name">
+                            <h2 className="faction-name">
                                 {faction2.get('faction')}
-                            </div>
+                            </h2>
                             <div className="faction-description">
                                 {faction2.get('description')}
                             </div>

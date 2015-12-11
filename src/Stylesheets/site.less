@@ -51,7 +51,7 @@
         .stroked-text();
     }
     
-    h2 {
+    h2, .h2 {
         .headings();
         .stroked-text();
         font-size: 8vh;
@@ -124,7 +124,7 @@
         section.results {
             display: block;
             
-            @number-width: 5vh;
+            @number-width: 1em;
             ol.results {
                 counter-reset: team-counter;
                 
@@ -134,8 +134,8 @@
                 }
                 
                 & > li:before {
-                    font-family: 'Curse-Casual-JVE', sans-serif;
-                    font-size: 1.25em;
+                    .h2();
+                    /*font-size: 1.25em;*/
                     content: counter(team-counter);
                     counter-increment: team-counter;
                     
@@ -163,6 +163,7 @@
             }
             
             .faction-summary + .faction-summary:before {
+                .h2();
                 content: ' and ';
             }
         }

@@ -22,13 +22,8 @@
     
     .headings() {
         font-family: 'Curse-Casual-JVE', sans-serif;
-        text-transform: uppercase;
         font-weight: bold;
         letter-spacing: .05em;
-        
-        &::first-letter {
-            font-size: 135%;
-        }
     }
     
     .stroked-text() {
@@ -46,9 +41,13 @@
     
     h1 {
         .headings();
-        font-size: 20vh;
-        
         .stroked-text();
+        
+        font-size: 20vh;
+        text-transform: uppercase;
+        &::first-letter {
+            font-size: 135%;
+        }
     }
     
     h2, .h2 {
@@ -131,6 +130,7 @@
                 & > li {
                     display: flex;
                     align-items: baseline;
+                    cursor: pointer;
                 }
                 
                 & > li:before {
@@ -139,32 +139,40 @@
                     content: counter(team-counter);
                     counter-increment: team-counter;
                     
-                    flex-basis: @number-width;
                     width: @number-width;
+                    min-width: @number-width;
                     text-align: right;
                     margin-right: @standard-spacing;
                 }
                 
-                & > li + li {
+                li + li {
                     margin-top: @standard-spacing;
                 }
             }
             
-            .faction-summary {
-                display: inline;
-                
-                .faction-name {
+            li.collapsed {
+                .faction-summary {
                     display: inline;
+                    
+                    .faction-name {
+                        display: inline;
+                    }
+                    
+                    .faction-description, .set-name {
+                        display: none;
+                    }
                 }
                 
-                .faction-description, .set-name {
-                    display: none;
+                .faction-summary + .faction-summary:before {
+                    .h2();
+                    content: ' and ';
                 }
             }
             
-            .faction-summary + .faction-summary:before {
-                .h2();
-                content: ' and ';
+            .set-name {
+                opacity: .75;
+                font-size: .75em;
+                margin-top: @standard-spacing;
             }
         }
     }

@@ -1,5 +1,6 @@
 var React = require('react');
 var PureRenderMixin = require('react-addons-pure-render-mixin');
+var update = require('react-addons-update');
 
 var factiondb = require('./faction-db.js');
 
@@ -9,10 +10,16 @@ var ResultView = React.createClass({
     },
     getInitialState: function() {
         return {
-            expanded: null
+            expanded: []
         };
     },
     mixins: [PureRenderMixin],
+    toggleExpansion: function(index) {
+        var newExpanded = this.state.expanded.splice(0);
+        newExpanded[index] = !newExpanded[index];
+        
+        this.setState({expanded: newExpanded});
+    },
     render: function() {
         var teamNodes = this.props.teams.map(function(team, i) {
             var set1 = factiondb.getSet(team.Faction1.set);
@@ -21,7 +28,9 @@ var ResultView = React.createClass({
             var set2 = factiondb.getSet(team.Faction2.set);
             var faction2 = factiondb.getFaction(team.Faction2.faction);
             return (
-                <li key={i}>
+                <li key={i}
+                    className={this.state.expanded[i] ? "expanded" : "collapsed"}
+                    onClick={this.toggleExpansion.bind(this, i)}>
                     <ul>
                         <li className="faction-summary">
                             <h2 className="faction-name">
@@ -48,7 +57,7 @@ var ResultView = React.createClass({
                     </ul>
                 </li>
             );
-        });
+        }.bind(this));
         return (
             <ol className="results">
                 {teamNodes}

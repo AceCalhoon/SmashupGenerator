@@ -36,7 +36,7 @@ var AppControls = React.createClass({
             <nav className={this.props.displayMode}>
                 <button className="smash" onClick={this.props.onSmash}>Smash!</button>
                 <button className="show-filter" onClick={this.props.onFilter}>Filter</button>
-                <button className="show-about" onClick={this.props.onAbout}>About</button>
+                <button className="show-about" onClick={this.props.onAbout}>?</button>
             </nav>
         );
     }

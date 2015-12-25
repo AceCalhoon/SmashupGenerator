@@ -39,7 +39,8 @@ var Generator = React.createClass({
     },
     handleSmash: function() {
         var teams = ScenarioGenerator.generateScenario(this.state.filter);
-        this.setState({state: ControlStates.Results, teams: teams});
+        var matchId = Date.now();
+        this.setState({state: ControlStates.Results, teams: teams, matchId: matchId});
     },
     handleFilter: function() {
         this.setState({state: ControlStates.Filter});
@@ -77,7 +78,7 @@ var Generator = React.createClass({
                         sets={factiondb.getSets()}
                         onFilterChange={this.handleFilterChange} />
                 </section>
-                <section className="results">
+                <section className="results" key={this.state.matchId}>
                     <Results.ResultView
                         teams={this.state.teams} />
                 </section>

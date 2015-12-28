@@ -83,7 +83,18 @@ var Generator = React.createClass({
                         teams={this.state.teams} />
                 </section>
                 <section className="about">
-                    About
+                    <h2>About</h2>
+                    <p>Need to figure out who gets each faction? Why not this app?</p>
+                    <p>The filter filters, hit Smash! for pairings, and pass decks around the table. Tap a pair of factions for more information on the factions. Sometimes it helps.</p>
+                    <p>This application is implemented in HTML5, CSS3, and JavaScript. A modern browser is required.</p>
+                    <p>Built with:</p>
+                    <ul>
+                        <li>LESS stylesheet precompilation</li>
+                        <li>React user interface library</li>
+                        <li>Grunt compilation pipeline</li>
+                        <li><a href="https://github.com/AceCalhoon/SmashupGenerator">Source Code on GitHub</a></li>
+                    </ul>
+                    <p>&copy; 2015 Aaron Siebersma</p>
                 </section>
                 <Nav.AppControls
                     displayMode={navDisplayMode}

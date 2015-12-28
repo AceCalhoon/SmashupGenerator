@@ -91,6 +91,10 @@
         text-transform: capitalize;
     }
     
+    a, a:active, a:visited {
+        color: #1b518f;
+    }
+    
     button {
         .h2();
         background-color: #1b518f;
@@ -225,6 +229,20 @@
     &.about {
         section.about {
             display: block;
+            padding: @standard-spacing;
+            
+            p + p, ul + p {
+                margin-top: @standard-spacing;
+                
+            }
+            
+            li {
+                margin-left: 2 * @standard-spacing;
+            }
+            
+            li + li {
+                margin-top: @standard-spacing;
+            }
         }
     }
     

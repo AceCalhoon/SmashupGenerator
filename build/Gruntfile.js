@@ -1,4 +1,12 @@
 module.exports = function(grunt) {
+  var preProcessFiles = [
+        {
+            expand: true,
+            cwd: '../src',
+            src: ['*.html', 'offline-manifest.appcache'],
+            dest: '../output/'
+        }
+    ];
 
   // Project configuration.
   grunt.initConfig({
@@ -20,26 +28,60 @@ module.exports = function(grunt) {
             }
         }
     },
-    preprocess: {
+    replace: {
         dist: {
             options: {
-                context: {
-                    VERSION: '<%= pkg.version %>',
-                    ANALYTICS: grunt.file.exists('../src/google-analytics.inc') ? true : null
-                }
+                patterns: [
+                    {
+                        match: /__VERSION__/g,
+                        replacement: '<%= pkg.version %>'
+                    }
+                ]
             },
-            files : [
+            files: [
                 {
                     expand: true,
-                    cwd: '../src',
+                    flatten: true,
+                    cwd: '../output',
                     src: ['*.html', 'offline-manifest.appcache'],
                     dest: '../output/'
+                },
+                {
+                    expand: true,
+                    flatten: true,
+                    cwd: '../output/tmp',
+                    src: ['*.js'],
+                    dest: '../output/tmp/'
                 }
             ]
         }
     },
+    preprocess: {
+        options: {
+            context: {
+                VERSION: '<%= pkg.version %>',
+                ANALYTICS: grunt.file.exists('../src/google-analytics.inc') ? true : null
+            } 
+        },
+        production: {
+            options: {
+                context: {
+                    DEBUG: undefined
+                }
+            },
+            files: preProcessFiles
+        },
+        debug: {
+            options: {
+                context: {
+                    DEBUG: true
+                }
+            },
+            files : preProcessFiles
+        }
+    },
     copy: {
-        dist: {
+        base: {
             files: [
                 {
                     expand: true,
@@ -60,6 +102,26 @@ module.exports = function(grunt) {
                     dest: '../output/Fonts'
                 }
             ]
+        },
+        debugjs: {
+            files: [
+                {
+                    src: '../output/tmp/app.js',
+                    dest: '../output/js/app.js'
+                },
+                {
+                    expand: true,
+                    cwd: '../src/js/Debug',
+                    src: '**',
+                    dest: '../output/js/Debug/'
+                }
+            ]
+        },
+        debugless: {
+            expand: true,
+            flatten: true,
+            src: '../src/Stylesheets/**/*.less',
+            dest: '../output/Stylesheets/' 
         }
     },
     browserify: {
@@ -69,11 +131,21 @@ module.exports = function(grunt) {
         dist: {
             src: '../src/js/app.js',
             dest: '../output/tmp/app.js'
+        },
+        debug: {
+            src: '../src/js/app.js',
+            dest: '../output/tmp/app.js',
+            options: {
+                browserifyOptions: { debug: true }
+            }
         }
     },
     env: {
         dist: {
-            NODE_ENV : grunt.option('environment') || 'development'
+            NODE_ENV : 'production'
+        },
+        debug: {
+            NODE_ENV : 'development'
         }
     },
     uglify: {
@@ -95,16 +167,30 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-env');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-replace');
 
   // Default task(s).
   grunt.registerTask('default', [
+    'env:debug',
+    'clean:init',
+    'browserify:debug',
+    'preprocess:debug',
+    'replace',
+    'copy:base',
+    'copy:debugjs',
+    'copy:debugless',
+    'clean:finalize'
+  ]);
+  
+  grunt.registerTask('production', [
     'env:dist',
     'clean:init',
     'less',
-    'browserify',
+    'browserify:dist',
+    'preprocess:production',
+    'replace',
     'uglify',
-    'preprocess',
-    'copy',
+    'copy:base',
     'clean:finalize'
   ]);
 };

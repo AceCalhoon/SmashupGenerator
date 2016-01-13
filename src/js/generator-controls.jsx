@@ -87,6 +87,7 @@ var Generator = React.createClass({
                     <p>Need to figure out who gets each faction? Why not this app?</p>
                     <p>The filter filters, hit Smash! for pairings, and pass decks around the table. Tap a pair of factions for more information on the factions. Sometimes it helps.</p>
                     <p>This application is implemented in HTML5, CSS3, and JavaScript. A modern browser is required.</p>
+                    <p>Version __VERSION__</p>
                     <p>Built with:</p>
                     <ul>
                         <li>LESS stylesheet precompilation</li>

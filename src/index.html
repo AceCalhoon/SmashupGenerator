@@ -13,11 +13,11 @@
         
         <!-- @ifdef DEBUG -->
         <link rel="stylesheet/less" type="text/css" href="Stylesheets/site.less" >
-        <script src="Scripts/Debug/less-1.7.5.js"></script>
+        <script src="js/Debug/less-1.7.5.js"></script>
         <!-- @endif -->
 
         <!-- @ifndef DEBUG !>
-        <link rel="stylesheet" href="Stylesheets/site-<!-- @endif --><!-- @ifndef DEBUG --><!-- @echo VERSION --><!-- @endif --><!-- @ifndef DEBUG !>.min.css" >
+        <link rel="stylesheet" href="Stylesheets/site-__VERSION__.min.css" >
         <!-- @endif -->
         
         <!-- Generated from: http://realfavicongenerator.net -->
@@ -55,7 +55,7 @@
         <!-- @endif -->
         
         <!-- @ifndef DEBUG !>
-        <script src="js/app-<!-- @endif --><!-- @ifndef DEBUG --><!-- @echo VERSION --><!-- @endif --><!-- @ifndef DEBUG !>.min.js"></script>
+        <script src="js/app-__VERSION__.min.js"></script>
         <!-- @endif -->
 
         <script>

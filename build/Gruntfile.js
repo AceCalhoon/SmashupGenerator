@@ -60,6 +60,7 @@ module.exports = function(grunt) {
         options: {
             context: {
                 VERSION: '<%= pkg.version %>',
+                TIMESTAMP: '<%= new Date() %>',
                 ANALYTICS: grunt.file.exists('../src/google-analytics.inc') ? true : null
             } 
         },

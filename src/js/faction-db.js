@@ -144,6 +144,46 @@ var dbmap = Immutable.fromJS([
         set: 'The Big Geeky Box',
         faction: 'Geeks',
         description: "Featuring Geek and Sundry, this deck will allow you to geek out like never before. Geek Dinosaurs, Geek Spies, you name it!"
+    },
+    {
+        set: 'Smash Up: Munchkin',
+        faction: 'Clerics',
+        description: "Munchkin Clerics are here to spread the holy word ... and do some smiting while they're at it! They've got blessings for you and curses for your opponents, all for a low, low tithe!"
+    },
+    {
+        set: 'Smash Up: Munchkin',
+        faction: 'Dwarves',
+        description: "Digging underground for most of their lives gives them a sensitivity to light, especially the light glinting off a piece of treasure! It also gives them impressive muscles. The last place you want to be is between a Munchkin Dwarf, his pickaxe, and some treasure."
+    },
+    {
+        set: 'Smash Up: Munchkin',
+        faction: 'Elves',
+        description: "Munchkin Elves want everyone to live in harmony, and they'll bash whomever they have to over the head to make that happen. Elves are also quite happy to help you ... and help themselves, while they're at it."
+    },
+    {
+        set: 'Smash Up: Munchkin',
+        faction: 'Halflings',
+        description: "It's hard to tell if you're up to your knees in children or Munchkin Halflings. A stabbing feeling in your thigh and the faint smell of sausage almost definitely means Halflings. They get everywhere and they just keep coming!"
+    },
+    {
+        set: 'Smash Up: Munchkin',
+        faction: 'Mages',
+        description: "What's better than zapping your enemies with lightning from your fingertips? Summoning something else to do it for you! Munchkin Mages are great at distracting their foes by dropping monsters on their heads. Surprise!"
+    },
+    {
+        set: 'Smash Up: Munchkin',
+        faction: 'Orcs',
+        description: "Birds travel in flocks. Deer travel in herds. Munchkin Orcs travel in hordes! It's hard to beat the overwhelming power of the horse, or the smell. No, really. Don't even try."
+    },
+    {
+        set: 'Smash Up: Munchkin',
+        faction: 'Thieves',
+        description: "Keep your eyes on Munchkin Thieves at all times. The moment you look away, you'll find a dagger in your back and your precious treasure in someone else's back ... pocket!"
+    },
+    {
+        set: 'Smash Up: Munchkin',
+        faction: 'Warriors',
+        description: "Whether they're from the windswept plains or the noblest castles, mighty Munchkin warriors live to fight! Using their brawn and all things point, warriors excel at killing things, especially Monsters."
     }
 ]);
 

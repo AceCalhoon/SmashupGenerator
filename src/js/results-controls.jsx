@@ -36,8 +36,9 @@ var ResultView = React.createClass({
                             <h2 className="faction-name">
                                 {faction1.get('faction')}
                             </h2>
-                            <div className="faction-description">
-                                {faction1.get('description')}
+                            <div
+                                className="faction-description"
+                                dangerouslySetInnerHTML={{__html: faction1.get('description')}}>
                             </div>
                             <div className="set-name">
                                 {faction1.get('set')}
@@ -47,8 +48,9 @@ var ResultView = React.createClass({
                             <h2 className="faction-name">
                                 {faction2.get('faction')}
                             </h2>
-                            <div className="faction-description">
-                                {faction2.get('description')}
+                            <div
+                                className="faction-description"
+                                dangerouslySetInnerHTML={{__html: faction2.get('description')}}>
                             </div>
                             <div className="set-name">
                                 {faction2.get('set')}

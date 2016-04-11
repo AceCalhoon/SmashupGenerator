@@ -32,8 +32,8 @@ var FactionFilter = React.createClass({
                 </label>
                 <div
                     className="faction-description"
-                    onClick={this.props.onSelectionChanged.bind(this, !this.props.selected)}>
-                    {this.props.faction.get('description')}
+                    onClick={this.props.onSelectionChanged.bind(this, !this.props.selected)}
+                    dangerouslySetInnerHTML={{__html: this.props.faction.get('description')}}>
                 </div>
             </div>
         );

@@ -184,6 +184,31 @@ var dbmap = Immutable.fromJS([
         set: 'Smash Up: Munchkin',
         faction: 'Warriors',
         description: "Whether they're from the windswept plains or the noblest castles, mighty Munchkin warriors live to fight! Using their brawn and all things point, warriors excel at killing things, especially Monsters."
+    },
+    {
+        set: "It's Your Fault",
+        faction: 'Dragons',
+        description: "Here there be Dragons! These massive monstrosities of legend have come to Smash Up, and they took smashing bases literally. They have little time for your opponent's shenanigans, for other factions are crunchy, and taste good with ketchup."
+    },
+    {
+        set: "It's Your Fault",
+        faction: 'Mythic Greeks',
+        description: "This is a story of a time long ago &ndash; a time of myth and legend. When the ancient gods were petty and cruel, and they plagued mankind with suffering... The ancient gods and heroes of Greek myth have returned, bringing their favors and curses, heroics and bravery to your Base battles."
+    },
+    {
+        set: "It's Your Fault",
+        faction: 'Sharks',
+        description: "The most perfect killing machines. Predators that have evolved to the apex of their realm. And now they want our realm! Sharks are coming on land to show that they have what it takes to be at the top of the food chain in and out of the water. Just when you thought it was safe to go back to the convenience store..."
+    },
+    {
+        set: "It's Your Fault",
+        faction: 'Superheroes',
+        description: "Faster than a speeding bullet. More powerful than an aggromotive. Able to leap tall Nukebots in a single bound... The mighty power of the comic page comes to life! Defeat your arch-nemesis with super strength, speed, and toughness. Then find out who wins the base in the next exciting issue!"
+    },
+    {
+        set: "It's Your Fault",
+        faction: 'Tornados',
+        description: "Ok, yes, we hope you get the obvious joke. But hey, Tornados are pretty awesome in this game (not as much in real life). Get ready to spread minions all over the place with these excellent Shark Delivery Systems&trade;."
     }
 ]);
 

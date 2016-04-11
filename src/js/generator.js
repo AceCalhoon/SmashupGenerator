@@ -24,7 +24,7 @@ function generateScenario(filter) {
     }
     
     var teams = [];
-    while(factions.length > 2) {
+    while(factions.length >= 2) {
         var randIndex = getRandomInt(0, factions.length);
         var selectedFactions = [];
         selectedFactions.push(popIndex(factions, randIndex));

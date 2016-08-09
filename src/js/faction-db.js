@@ -209,6 +209,26 @@ var dbmap = Immutable.fromJS([
         set: "It's Your Fault",
         faction: 'Tornados',
         description: "Ok, yes, we hope you get the obvious joke. But hey, Tornados are pretty awesome in this game (not as much in real life). Get ready to spread minions all over the place with these excellent Shark Delivery Systems&trade;."
+    },
+    {
+        set: "Cease and Desist",
+        faction: 'Astroknights',
+        description: "Quite a while back, in a grouping of stars not close to here, the Astroknights protected the various species of the galaxy! Boosting their strength, speed, and skill with the incredible powers of the Fours, they were the equal of armies. But now their time is past, and darkness reigns. Will a rag-tag group of heroes be able to defeat a massive juggernaut of an imperium and restore freedom? Hey, it's a space opera &mdash; of course they will!"
+    },
+    {
+        set: "Cease and Desist",
+        faction: 'Changerbots',
+        description: "Quite a lot more than your eyes first perceive! The Changerbots hail from another world, but secretly move about ours in the form of everyday transportation. They change their form and abilities to fight a never-ending battle against their enemies, and protect the human race from their robotic shenanigans. They are also the subject of an absolutely terrible movie reboot, apparently."
+    },
+    {
+        set: "Cease and Desist",
+        faction: 'Ignobles',
+        description: "In the game of kingly seats, you smash the base, or you are destroyed. The Ignobles can be trusted just about as far as you can throw them. Backstabbing, swapping sides, and the occasional party crashing is par for the course for these medieval schemers. Watch out for help offered from one of these untrustworthy types, it will be shorrt lived."
+    },
+    {
+        set: "Cease and Desist",
+        faction: 'Star Roamers',
+        description: "These are the travels of the spaceship Undertaking. Its several-year mission: to find new worlds, seek out new life and attractice green ladies, to bravely go where no person has gone before! The Star Roamers travel about the board, using their incredible teleporting technology to send countless ensigns to their deaths, all in the name of base smashing!"
     }
 ]);
 

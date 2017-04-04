@@ -229,6 +229,26 @@ var dbmap = Immutable.fromJS([
         set: "Cease and Desist",
         faction: 'Star Roamers',
         description: "These are the travels of the spaceship Undertaking. Its several-year mission: to find new worlds, seek out new life and attractice green ladies, to bravely go where no person has gone before! The Star Roamers travel about the board, using their incredible teleporting technology to send countless ensigns to their deaths, all in the name of base smashing!"
+    },
+    {
+        set: "What Were We Thinking?",
+        faction: 'Explorers',
+        description: "This faction doesn't belong in a museum! They belong on bases! The Explorers use their fearless sense of adventure to move quickly onto new bases and establish your powere there quickly. By helping you control the flow of bases, they can nearly guarantee fortune and glory... or at least points."
+    },
+    {
+        set: "What Were We Thinking?",
+        faction: 'Grannies',
+        description: "Everybody loves grandma! And grandma loves you, let me find something in my bag here for you... Grannies keep close tabs on the family, even if that family includes dinosaurs or zombies! They always know who is coming and going, and that slight busybody-ness can come in incredibly handy when planning your strategies for smashing bases."
+    },
+    {
+        set: "What Were We Thinking?",
+        faction: 'Rock Stars',
+        description: "Hello Cleveland! Let's ROCK!!! Rock Stars want to put on the best show for their fans, and sell out the biggest venues. The biggest venues of course being those with the highest breakpoint. Put on a massive concert and focus on those bases for the win."
+    },
+    {
+        set: "What Were We Thinking?",
+        faction: 'Teddy Bears',
+        description: "Who could possibly come between you and your bear when you were little? Nothing. Because those bears had more up their sleeves than you ever knew. Just try looking at their owners the wrong way and you're in trouble. In the sweetest ways possible!"
     }
 ]);
 

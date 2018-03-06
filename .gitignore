@@ -1,3 +1,4 @@
 src/web.config
 src/google-analytics.inc
 output/**
+.vs/**

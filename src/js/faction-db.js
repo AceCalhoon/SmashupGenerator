@@ -249,6 +249,26 @@ var dbmap = Immutable.fromJS([
         set: "What Were We Thinking?",
         faction: 'Teddy Bears',
         description: "Who could possibly come between you and your bear when you were little? Nothing. Because those bears had more up their sleeves than you ever knew. Just try looking at their owners the wrong way and you're in trouble. In the sweetest ways possible!"
+    },
+    {
+        set: "Big In Japan",
+        faction: 'Mega Troopers',
+        description: "Go go play on bases! Go go destroy minions! Go go Mega Troopers, You crazy Smash Up Mega Troopers! The Mega Troopers are the ultimate fighting team, snatching victory from the jaws of defeat. And should things get out of control, they can always call a giant frickin' robot and auto-win. Which they should probably just do earlier in the fight, but whatever."
+    },
+    {
+        set: "Big In Japan",
+        faction: 'Magical Girls',
+        description: "Moonlight, dreams, love, and starshine! OMG, it's so kawaii!!!! The Magical Girls are undoubtedly cute, but they will surprise you with what they can do with their spells. And they work together as a team. Evil will have no chance against these girls."
+    },
+    {
+        set: "Big In Japan",
+        faction: 'Kaiju',
+        description: "Giant monsters stomp around Tokyo, smashing countless buildings as they battle. Their amazing destructive power confounds scientists, whose greatest waponry proves useless against them. Who can stop the massive power of a guy in a rubber suit? We know! We'll let the precocious 10-year-old, with unexplained access to the Japanese military's most secure facilities, talk to it!"
+    },
+    {
+        set: "Big In Japan",
+        faction: 'Itty Critters',
+        description: "They're tiny, and they come and go quickly, but once you learn which one to call when, the Itty Critters can really pack a punch. We know you'll want to have them all. If you can make these things as popular as certain other things (you know which ones) we'd be eternally grateful."
     }
 ]);
 

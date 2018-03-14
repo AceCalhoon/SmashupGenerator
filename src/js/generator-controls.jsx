@@ -34,11 +34,13 @@ var Generator = React.createClass({
         return {
             state: ControlStates.Intro,
             teams: [],
-            filter: filter
+            filter: filter,
+            playerCount: 4,
+            minimumSets: 2
         };
     },
     handleSmash: function() {
-        var teams = ScenarioGenerator.generateScenario(this.state.filter);
+        var teams = ScenarioGenerator.generateScenario(this.state.filter, this.state.playerCount, this.state.minimumSets);
         var matchId = Date.now();
         this.setState({state: ControlStates.Results, teams: teams, matchId: matchId});
     },
@@ -47,6 +49,9 @@ var Generator = React.createClass({
     },
     handleAbout: function() {
         this.setState({state: ControlStates.About});
+    },
+    handleHome: function() {
+        this.setState({state: ControlStates.Intro});
     },
     handleFilterChange: function(filter) {
         this.setState({filter: filter});
@@ -72,7 +77,30 @@ var Generator = React.createClass({
             <div className={classNames('generator', this.state.state)}>
                 <section className="welcome">
                     <h1>Smashing!</h1>
+                    <select value={this.state.playerCount}
+                        onChange={function(event) {
+                            this.setState({playerCount: event.target.value});
+                        }.bind(this)}>
+                        <option value="2">2 players</option>
+                        <option value="3">3 players</option>
+                        <option value="4">4 players</option>
+                        <option value="5">5 players</option>
+                        <option value="6">6 players</option>
+                        <option value="">Battle royale</option>
+                    </select>
+                    <select value={this.state.minimumSets}
+                        onChange={function(event) {
+                            this.setState({minimumSets: event.target.value});
+                        }.bind(this)}>
+                        <option value="1">1+ sets in pool</option>
+                        <option value="2">2+ sets in pool</option>
+                        <option value="3">3+ sets in pool</option>
+                        <option value="4">4+ sets in pool</option>
+                        <option value="5">5+ sets in pool</option>
+                        <option value="6">6+ sets in pool</option>
+                    </select>
                 </section>
+                
                 <section className="filter">
                     <Filter.GameFilter
                         sets={factiondb.getSets()}
@@ -101,7 +129,8 @@ var Generator = React.createClass({
                     displayMode={navDisplayMode}
                     onSmash={this.handleSmash}
                     onFilter={this.handleFilter}
-                    onAbout={this.handleAbout} />
+                    onAbout={this.handleAbout}
+                    onHome={this.handleHome} />
             </div>
         );
     }

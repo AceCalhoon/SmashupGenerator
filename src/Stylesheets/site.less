@@ -115,6 +115,18 @@
         border-radius: .5vh;
     }
     
+    select {
+        .h2();
+        display: block;
+        background-color: #1b518f;
+        background-color: rgba(27, 81, 143, .85);
+        border: none;
+        border-radius: .5vh;
+        padding-left: .25em;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }
     
     box-sizing: border-box;
     height: 100vh;
@@ -135,10 +147,20 @@
             
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-end;
+            flex-direction: column;
+            margin: 0 1vh;
+            overflow: hidden;
             
             h1 {
                 transform: rotateX(-10deg) rotateY(45deg);
+            }
+
+            select {
+                width: 100%;
+                box-sizing: border-box;
+                margin: 1vh 0;
+                height: @compact-nav-height;
             }
         }
     }
@@ -303,10 +325,24 @@
                 height: 33%;
                 flex-grow: 1;
             }
+
+            button.home-button {
+                display: none;
+            }
         }
         
         &.filter {
             button.show-filter {
+                display: none;
+            }
+
+            button.smash {
+                display: none;
+            }
+        }
+
+        &.compact {
+            button.smash {
                 display: none;
             }
         }

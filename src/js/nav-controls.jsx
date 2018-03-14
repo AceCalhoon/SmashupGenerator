@@ -17,14 +17,16 @@ var AppControls = React.createClass({
         displayMode: React.PropTypes.string,
         onSmash: React.PropTypes.func,
         onFilter: React.PropTypes.func,
-        onAbout: React.PropTypes.func
+        onAbout: React.PropTypes.func,
+        onHome: React.PropTypes.func
     },
     getDefaultProps: function() {
         return {
             displayMode: DisplayModes.Expanded,
             onSmash: function() {},
             onFilter: function() {},
-            onAbout: function() {}
+            onAbout: function() {},
+            onHome: function() {}
         }
     },
     getInitialState: function() {
@@ -35,6 +37,7 @@ var AppControls = React.createClass({
         return (
             <nav className={this.props.displayMode}>
                 <button className="smash" onClick={this.props.onSmash}>Smash!</button>
+                <button className="home-button" onClick={this.props.onHome}>Home</button>
                 <button className="show-filter" onClick={this.props.onFilter}>Filter</button>
                 <button className="show-about" onClick={this.props.onAbout}>?</button>
             </nav>

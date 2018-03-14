@@ -10,7 +10,102 @@ var factiondb = require('./faction-db.js');
        }
    }
 */
-function generateScenario(filter) {
+function generateScenario(filter, playerCount, minimumSets) {
+    console.log('Generating...', filter, playerCount, minimumSets);
+    if(!playerCount) {
+        return generateRoyaleScenario(filter);
+    }
+
+    var filteredSets = [];
+    var totalWeight = 0;
+    for(var setName in filter) {
+        var filterSet = filter[setName];
+        if(filterSet.selected) {
+            var setInfo = {
+                name: setName,
+                factions: []
+            };
+
+            for(var factionName in filterSet.factions) {
+                if(filterSet.factions[factionName]) {
+                    setInfo.factions.push(factionName);
+                }
+            }
+
+            totalWeight += setInfo.factions.length;
+            
+            filteredSets.push(setInfo);
+        }
+    }
+
+    var totalFilteredSetLength = filteredSets.length;
+    var chosenSets = [];
+    var chosenFactionCount = 0;
+
+    while(chosenSets.length < totalFilteredSetLength && (
+        chosenSets.length < minimumSets || chosenFactionCount < playerCount * 2)) {
+        var randIndex = getRandomInt(0, totalWeight);
+        for(var i in filteredSets) {
+            var set = filteredSets[i];
+            randIndex -= set.factions.length;
+            if(randIndex <= 0) {
+                chosenSets.push(popIndex(filteredSets, i));
+                chosenFactionCount += set.factions.length;
+                break;
+            }
+        }
+    }
+
+    console.log('Sets chosen', chosenSets, chosenSets.map(function(set) { return set.name; }));
+
+    var factions = [];
+    for(var i in chosenSets) {
+        var set = chosenSets[i];
+        for(var f in set.factions) {
+            factions.push({ set: set.name, faction: set.factions[f]});
+        }
+    }
+
+    var teams = [];
+    var totalFactions = factions.length;
+    for(var i = 0; i < playerCount && i < Math.floor(totalFactions / 2); ++i) {
+        var selectedFactions = [];
+
+        var randIndex = getRandomInt(0, factions.length);
+        selectedFactions.push(popIndex(factions, randIndex));
+        randIndex = getRandomInt(0, factions.length);
+        selectedFactions.push(popIndex(factions, randIndex));
+
+        selectedFactions = selectedFactions.sort(function(a,b) {
+            return a.faction.localeCompare(b.faction);
+        });
+
+        teams.push({
+            Faction1: selectedFactions[0],
+            Faction2: selectedFactions[1]
+        })
+    }
+
+    /*
+        Return format:
+        [
+            {
+                Faction1: {
+                    set: <setName>,
+                    faction: <factionName>
+                },
+                Faction2: {
+                    set: <setName>,
+                    faction: <factionName>
+                }
+            },
+            ...
+        ]
+    */
+    return teams;
+}
+
+function generateRoyaleScenario(filter) {
     var factions = [];
     for(var setName in filter) {
         var filterSet = filter[setName];
@@ -41,6 +136,21 @@ function generateScenario(filter) {
         })
     }
 
+    /*
+        Return format:
+        [
+            {
+                Faction1: {
+                    set: <setName>,
+                    faction: <factionName>
+                },
+                Faction2: {
+                    set: <setName>,
+                    faction: <factionName>
+                }
+            }
+        ]
+    */
     return teams;
 }
 

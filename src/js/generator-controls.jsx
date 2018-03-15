@@ -8,6 +8,8 @@ var Results = require('./results-controls.jsx');
 
 var classNames = require('classnames');
 
+var Cookies = require('js-cookie');
+
 var factiondb = require('./faction-db.js');
 var ScenarioGenerator = require('./generator.js');
 
@@ -31,12 +33,19 @@ var Generator = React.createClass({
             
             filter[set.get('set')] = setFilter;
         });
+
+        var playerCount = Cookies.get('playerCount') || 4;
+        var minimumSets = Cookies.get('minimumSets') || 2;
+
+        var cookieFilter = JSON.parse(Cookies.get('filter') || null);
+        filter = extend(filter, cookieFilter);
+
         return {
             state: ControlStates.Intro,
             teams: [],
             filter: filter,
-            playerCount: 4,
-            minimumSets: 2
+            playerCount: playerCount,
+            minimumSets: minimumSets
         };
     },
     handleSmash: function() {
@@ -55,6 +64,7 @@ var Generator = React.createClass({
     },
     handleFilterChange: function(filter) {
         this.setState({filter: filter});
+        Cookies.set('filter', JSON.stringify(filter));
     },
     mixins: [PureRenderMixin],
     render: function() {
@@ -80,6 +90,7 @@ var Generator = React.createClass({
                     <select value={this.state.playerCount}
                         onChange={function(event) {
                             this.setState({playerCount: event.target.value});
+                            Cookies.set('playerCount', event.target.value);
                         }.bind(this)}>
                         <option value="2">2 players</option>
                         <option value="3">3 players</option>
@@ -91,6 +102,7 @@ var Generator = React.createClass({
                     <select value={this.state.minimumSets}
                         onChange={function(event) {
                             this.setState({minimumSets: event.target.value});
+                            Cookies.set('minimumSets', event.target.value);
                         }.bind(this)}>
                         <option value="1">1+ sets in pool</option>
                         <option value="2">2+ sets in pool</option>
@@ -140,3 +152,14 @@ var Generator = React.createClass({
 module.exports.RenderGenerator = function(container) {
     ReactDOM.render(<Generator />, container);
 };
+
+//Source: https://plainjs.com/javascript/utilities/merge-two-javascript-objects-19/
+function extend(obj, src) {
+    if(src == null) {
+        return obj;
+    }
+
+    Object.keys(src).forEach(function(key) { obj[key] = src[key]; });
+
+    return obj;
+}

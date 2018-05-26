@@ -33,7 +33,7 @@ var dbmap = Immutable.fromJS([
     {
         set: 'Smash Up',
         faction: 'Wizards',
-        description: 'Presto! Wizards conjure what they need with actions galore. They just keep pulling things out of their hats, so watch their hands. Or their hts... of that big portal to another reality they just opened in your kitchen.'
+        description: 'Presto! Wizards conjure what they need with actions galore. They just keep pulling things out of their hats, so watch their hands. Or their hats... of that big portal to another reality they just opened in your kitchen.'
     },
     {
         set: 'Smash Up',
@@ -269,6 +269,26 @@ var dbmap = Immutable.fromJS([
         set: "Big In Japan",
         faction: 'Itty Critters',
         description: "They're tiny, and they come and go quickly, but once you learn which one to call when, the Itty Critters can really pack a punch. We know you'll want to have them all. If you can make these things as popular as certain other things (you know which ones) we'd be eternally grateful."
+    },
+    {
+        set: "That '70s Expansion",
+        faction: 'Disco Dancers',
+        description: "Nothing defined the 1970s like Disco. Love it or hate it, this music shaped our image of that decade. And the people who loved it are here to turn the beat around all over their opponents! Don't assume that the leisure suit and roller skates make them pushovers, or you just might not make it to the last dance... Disco Dancers have learned the power of dancing together. Watch out as they copy each others' moves!"
+    },
+    {
+        set: "That '70s Expansion",
+        faction: 'Kung Fu Fighters',
+        description: "Well, everyone was... Kung Fu Fighters have incredible martial skill that defies reality. Well, the defying reality bit was in large part due to wires... but still, they know how to dish out a beating. Kung Fu Fighters know that power flows like water, and can make it flow from minion to minion as they wish."
+    },
+    {
+        set: "That '70s Expansion",
+        faction: 'Truckers',
+        description: "Trucker culture hit its height in the 1970s thanks to some amazing movies that came out in that decade. Truckers were the heroes of the open road, By keeping in touch through their CB radios, they could defy corrupt law enforcement and free small towns, all the while delivering the goods that kept America running. As you'd expect, the Truckers are all about action and transferring things, and you'll see that on their cards."
+    },
+    {
+        set: "That '70s Expansion",
+        faction: 'Vigilantes',
+        description: "There's never been vigilante justice like '70s vigilante justice. Just as mean as the crime they fout, these hard-nosed heroes keep the streets safe for the good people of the city. They never back down, even when the odds are stacked way against them, because a good drink can help you shrug off anything. No matter what your opponent may throw at you, the vigilantes will answer."
     }
 ]);
 

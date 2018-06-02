@@ -23,7 +23,8 @@ function generateScenario(filter, playerCount, minimumSets) {
         if(filterSet.selected) {
             var setInfo = {
                 name: setName,
-                factions: []
+                factions: [],
+                featured: filterSet.featured
             };
 
             for(var factionName in filterSet.factions) {
@@ -41,6 +42,15 @@ function generateScenario(filter, playerCount, minimumSets) {
     var totalFilteredSetLength = filteredSets.length;
     var chosenSets = [];
     var chosenFactionCount = 0;
+
+    for(var i in filteredSets) {
+        if(filteredSets[i].featured) {
+            var set = filteredSets[i];
+            console.log('Pushing featured set', set);
+            chosenSets.push(popIndex(filteredSets, i));
+            chosenFactionCount += set.factions.length;
+        }
+    }
 
     while(chosenSets.length < totalFilteredSetLength && (
         chosenSets.length < minimumSets || chosenFactionCount < playerCount * 2)) {

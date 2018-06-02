@@ -30,11 +30,6 @@ var FactionFilter = React.createClass({
                         checked={this.props.selected}
                         onChange={this.handleChange} />{this.props.faction.get('faction')}
                 </label>
-                <div
-                    className="faction-description"
-                    onClick={this.props.onSelectionChanged.bind(this, !this.props.selected)}
-                    dangerouslySetInnerHTML={{__html: this.props.faction.get('description')}}>
-                </div>
             </div>
         );
     }
@@ -58,6 +53,7 @@ var SetFilter = React.createClass({
     },
     handleSetChange: function(set) {
         var newSelected = !this.props.selected;
+        var newFeatured = this.props.featured && newSelected;
         
         var changes = {};
         for(var key in this.props.factionSelection) {
@@ -68,7 +64,27 @@ var SetFilter = React.createClass({
         
         var newFactions = update(this.props.factionSelection, changes);
     
-        this.props.onSetChange(set, newSelected, newFactions);
+        this.props.onSetChange(set, newSelected, newFactions, newFeatured);
+    },
+    handleSetFeatureChange: function(set) {
+        var newFeatured = !this.props.featured;
+        var newSelected = this.props.selected;
+        var newFactions = this.props.factionSelection;
+
+        if(newFeatured) {
+            newSelected = true;
+
+            var changes = {};
+            for(var key in this.props.factionSelection) {
+                changes[key] = {
+                    $set: newSelected
+                }
+            }
+            
+            newFactions = update(this.props.factionSelection, changes);
+        }
+
+        this.props.onSetChange(set, newSelected, newFactions, newFeatured);
     },
     handleFactionChange: function(set, faction) {
         var factionSelected = !this.props.factionSelection[faction];
@@ -106,6 +122,9 @@ var SetFilter = React.createClass({
                             {this.props.set.get('set')}
                         </span>
                     </label>
+                    <input type="checkbox"
+                        checked={this.props.featured}
+                        onChange={this.handleSetFeatureChange.bind(this, this.props.set.get('set'))} />
                 </h2>
                 <ol>
                     {factionNodes}
@@ -136,18 +155,20 @@ var GameFilter = React.createClass({
 
             filter[set.get('set')] = {
                 selected: true,
-                factions: factions
+                factions: factions,
+                featured: false
             };
         });
         return {
             filter: filter
         };
     },
-    handleSetChange: function(set, setSelected, factionsSelected) {
+    handleSetChange: function(set, setSelected, factionsSelected, featured) {
         var changes = {};
         changes[set] = {
             selected: {$set: setSelected},
-            factions: {$set: factionsSelected}
+            factions: {$set: factionsSelected},
+            featured: {$set: featured}
         };
 
         var newFilter = update(this.state.filter, changes);
@@ -165,6 +186,7 @@ var GameFilter = React.createClass({
                     <SetFilter set={set}
                         selected={this.state.filter[set.get('set')].selected}
                         factionSelection={this.state.filter[set.get('set')].factions}
+                        featured={this.state.filter[set.get('set')].featured}
                         onSetChange={this.handleSetChange} />
                 </li>
             );

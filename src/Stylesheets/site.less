@@ -174,9 +174,24 @@
             }
             
             @checkbox-width: 3.5vh;
+            h2 {
+                display: flex;
+                align-items: center;
+
+                input[type=checkbox] {
+                    margin: 0;
+                    margin-left: @standard-spacing;
+                    width: @checkbox-width;
+                    height: @checkbox-width;
+                    box-sizing: border-box;
+                    flex-shrink: 0;
+                }
+            }
+
             label {
                 display: flex;
                 align-items: center;
+                flex-grow: 1;
                 cursor: pointer;
                 
                 input[type=checkbox] {
@@ -185,11 +200,14 @@
                     width: @checkbox-width;
                     height: @checkbox-width;
                     box-sizing: border-box;
+                    flex-shrink: 0;
                 }
-                
-                
             }
             
+            .set-name {
+                flex-grow: 1;
+            }
+
             .faction-name {
                 font-weight: bold;
             }

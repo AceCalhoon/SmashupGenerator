@@ -2,3 +2,4 @@ src/web.config
 src/google-analytics.inc
 output/**
 .vs/**
+node_modules/

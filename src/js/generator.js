@@ -46,7 +46,6 @@ function generateScenario(filter, playerCount, minimumSets) {
     for(var i in filteredSets) {
         if(filteredSets[i].featured) {
             var set = filteredSets[i];
-            console.log('Pushing featured set', set);
             chosenSets.push(popIndex(filteredSets, i));
             chosenFactionCount += set.factions.length;
         }

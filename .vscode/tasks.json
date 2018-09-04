@@ -28,6 +28,29 @@
                     "message": 2 
                 }
             }
+        },
+        {
+            "label": "build production",
+            "type": "shell",
+            "command": "grunt",
+            "args": ["production", "--gruntfile", "${workspaceRoot}/build/Gruntfile.js"],
+            "group": "build",
+            "presentation":{
+                "echo": true,
+                "reveal": "silent",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": {
+                "owner": "grunt",
+                "fileLocation": "absolute",
+                "pattern": {
+                    "regexp": "^>> Error: .* Line ([0-9]*): (.*) while parsing file: (.*)$",
+                    "file": 3,
+                    "line": 1,
+                    "message": 2 
+                }
+            }
         }
     ]
 }

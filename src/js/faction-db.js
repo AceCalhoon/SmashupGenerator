@@ -289,6 +289,16 @@ var dbmap = Immutable.fromJS([
         set: "That '70s Expansion",
         faction: 'Vigilantes',
         description: "There's never been vigilante justice like '70s vigilante justice. Just as mean as the crime they fout, these hard-nosed heroes keep the streets safe for the good people of the city. They never back down, even when the odds are stacked way against them, because a good drink can help you shrug off anything. No matter what your opponent may throw at you, the vigilantes will answer."
+    },
+    {
+        set: "Promo",
+        faction: 'Sheep',
+        description: "Decades of ewe-genics has transformed these harmless, dumb, grazing animals into harmful, dumb, grazing animals. They obediently and harmlessly follow other minions around from base to base... then they mercilessly crush their opponents with a wave of minions no one can stop. They are baaaaad news!"
+    },
+    {
+        set: "The Bigger Geekier Box",
+        faction: 'Smash Up All Stars',
+        description: "You know how irritating it is when a company repackages a product with alternate art just to make you buy something you already own? This faction isn't like that at all. Nosirree. This is the Dream Team of Smash Up favorites. Yep, that's the ticket. They're the all-star team, looking for the space to jam the ball through a hoop."
     }
 ]);
 

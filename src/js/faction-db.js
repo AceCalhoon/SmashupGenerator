@@ -299,7 +299,28 @@ var dbmap = Immutable.fromJS([
         set: "The Bigger Geekier Box",
         faction: 'Smash Up All Stars',
         description: "You know how irritating it is when a company repackages a product with alternate art just to make you buy something you already own? This faction isn't like that at all. Nosirree. This is the Dream Team of Smash Up favorites. Yep, that's the ticket. They're the all-star team, looking for the space to jam the ball through a hoop."
+    },
+    {
+        set: "Oops, You Did It Again",
+        faction: 'Ancient Egyptians',
+        description: "Many of our most esteemed historians and scientists of course believe that ancient Egyptians were helped along by aliens and creepy mummy magic. This is an accepted fact of modern science. And now it's your chance to use those powers against your opponents! The Ancient Egyptians use the new \"bury\" mechanic to leave surprises, both good and bad, on the board. Take care around them, you never know what lies hidden beneath the sands of time."
+    },
+    {
+        set: "Oops, You Did It Again",
+        faction: 'Cowboys',
+        description: "Yeeeehaw!! Come out guns blazing with the rip-roarin'est faction to ever ride into Smash Up. The Cowboys are going to call you out at high noon, and make sure you go home in a pine box. Dueling is their strategy of choice, because who better to slap leather than the quickest guns in the west?"
+    },
+    {
+        set: "Oops, You Did It Again",
+        faction: 'Samurai',
+        description: "Honor is a force stronger than tin! The Samurai of Smash Up face their enemies with a spirit of calm, ready to face their end in battle if their lord requires it. Using dueling, the samurai will take down their enemies, or die gloriously, bringing great esteem to their family. No broken cavalry or ring-bouncing required! Utz... Kampai!"
+    },
+    {
+        set: "Oops, You Did It Again",
+        faction: 'Vikings',
+        description: "There's gold out there, treasure and wealth. Sure it belongs to other people, but why let that stop you? You're vikings! Raid and pillage your way to victory. The Vikings know that they could make better use of other people's cards. Why did they even bring cards to the game unless they weren't afraid to lose them?"
     }
+    
 ]);
 
 module.exports.db = dbmap;

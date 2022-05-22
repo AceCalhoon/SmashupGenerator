@@ -319,6 +319,26 @@ var dbmap = Immutable.fromJS([
         set: "Oops, You Did It Again",
         faction: 'Vikings',
         description: "There's gold out there, treasure and wealth. Sure it belongs to other people, but why let that stop you? You're vikings! Raid and pillage your way to victory. The Vikings know that they could make better use of other people's cards. Why did they even bring cards to the game unless they weren't afraid to lose them?"
+    },
+    {
+        set: "World Tour: International Incident",
+        faction: 'Luchadors',
+        description: "They're going to the top rope! The Luchadors bring the high-flying stunts of Mexican wrestling to the Smash Up squared-circle! These masked wrestlers defy gravity, and their opponents, using their signature techniques to get the pin, and of course, break the base! Beware their set-ups, because their follow-ups are usually brutal!"
+    },
+    {
+        set: "World Tour: International Incident",
+        faction: 'Mounties',
+        description: "Turn of the century Canada *cue silent film piano*... the Great White North is protected by the noble Mounties and their... battle moose! The Mounties always get their man, no matter how devious, all while upholding the noble demeanor of Canada. They like to be around others, and it's not just friendliness -- they are gathering their strength to take over."
+    },
+    {
+        set: "World Tour: International Incident",
+        faction: 'Musketeers',
+        description: "One for all, and all for one! Or three! Or really four, because there were four of them, but we'll ignore that, just like the title of the book! The Musketeers were the super heroes of Renaissance France, taking on corrupt elements with style and panache. Their quick skills with the blade were matched only by their quick wit. After biding their time, they explode into a dazzling series of actions."
+    },
+    {
+        set: "World Tour: International Incident",
+        faction: 'Sumo Wrestlers',
+        description: "The powerful sumo wrestlers of Japan can really throw their weight around the bases! These massive warriors can knock back any enemies that come against them, but don't let their initial girth fool you. They will sacrifice cards for pwoer, and use that power to knock all opponents out of the ring ... and base!"
     }
     
 ]);

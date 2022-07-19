@@ -339,8 +339,32 @@ var dbmap = Immutable.fromJS([
         set: "World Tour: International Incident",
         faction: 'Sumo Wrestlers',
         description: "The powerful sumo wrestlers of Japan can really throw their weight around the bases! These massive warriors can knock back any enemies that come against them, but don't let their initial girth fool you. They will sacrifice cards for pwoer, and use that power to knock all opponents out of the ring ... and base!"
-    }
-    
+    },
+    {
+        set: "World Tour: Culture Shock",
+        faction: 'Anansi Tales',
+        description: "The great trickster Anansi the Spdier and the other amazing characters of West African folklore bring their fantastic stories to Smash Up. Anansi collected stories, but also traded them as he traveled. And he nearly always got the better part of any deal. If you are as clever as Anansi, you can benefit both from playing your cards and from giving them away."
+    },
+    {
+        set: "World Tour: Culture Shock",
+        faction: 'Ancient Incas',
+        description: "Children of the Sun, your time has just begun... well, it was quite a while ago, but the impact of the ancient Incan civilization will still have great impact, on a card game that has violent grandmas and dinosaurs with laser guns. Seriously, we might owe history better... anyway, our Ancient Incas rock! Just like the real Incan empire built massive buildings and long highways with advanced engineering techniques, our will build up your bases like never before!"
+    },
+    {
+        set: "World Tour: Culture Shock",
+        faction: "Grimms' Fairy Tales",
+        description: "From the woodlands and cottages of Germany come the talkes of the Brothers Grimm. From classics such as Hansel and Gretel, to really bizarre stuff like a sentient sausage, you'll be able to bring the stories to life. Minions who work better when their tales are complete just might mean two little kids with pretzels might bring down a Zombie Lord or Ninja Master."
+    },
+    {
+        set: "World Tour: Culture Shock",
+        faction: 'Polynesian Voyagers',
+        description: "The Islanders of the Pacific Ocean are famous for their exploration of island chains, and this faction will do just that. Not only landing on unexplored bases, but discovering all-new bases that weren't even in play yet! Not only that, but these voyagers channel the pwoer of their tattoos to gain even greater power. You're welcome!"
+    },
+    {
+        set: "World Tour: Culture Shock",
+        faction: 'Russian Fairy Tales',
+        description: "The legendary tales of Russia enter Smash Up and bring with them fantastical characters, including the dangerous Baba Yaga. Transformation is in many of these stories, and this faction takes advantage of that. You can change your minions for the better, and your opponents' minions for the worse, faster than they can keep up!"
+    },
 ]);
 
 module.exports.db = dbmap;

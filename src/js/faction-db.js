@@ -296,6 +296,16 @@ var dbmap = Immutable.fromJS([
         description: "Decades of ewe-genics has transformed these harmless, dumb, grazing animals into harmful, dumb, grazing animals. They obediently and harmlessly follow other minions around from base to base... then they mercilessly crush their opponents with a wave of minions no one can stop. They are baaaaad news!"
     },
     {
+        set: "Promo",
+        faction: 'Knights of the Round Table',
+        description: "This faction has no official flavor text because the Smash Up Knights of the Round Table has no rulebook. They ride all over the bases, completing quests to get various prizes."
+    },
+    {
+        set: "Promo",
+        faction: 'Teens',
+        description: "This faction has no official flavor text because the Smash Up Teens has no rulebook."
+    },
+    {
         set: "The Bigger Geekier Box",
         faction: 'Smash Up All Stars',
         description: "You know how irritating it is when a company repackages a product with alternate art just to make you buy something you already own? This faction isn't like that at all. Nosirree. This is the Dream Team of Smash Up favorites. Yep, that's the ticket. They're the all-star team, looking for the space to jam the ball through a hoop."
@@ -339,6 +349,26 @@ var dbmap = Immutable.fromJS([
         set: "World Tour: International Incident",
         faction: 'Sumo Wrestlers',
         description: "The powerful sumo wrestlers of Japan can really throw their weight around the bases! These massive warriors can knock back any enemies that come against them, but don't let their initial girth fool you. They will sacrifice cards for pwoer, and use that power to knock all opponents out of the ring ... and base!"
+    },
+    {
+        set: "Excellent Movies, Dudes!",
+        faction: 'Action Heroes',
+        description: "Yo. Men of few words. Enjoy working alone. Good at it."
+    },
+    {
+        set: "Excellent Movies, Dudes!",
+        faction: 'Backtimers',
+        description: "Are you ready to feel the power of love? Then get ready to doubleback in time with the Backtimers! A teenager, his scientist friend, and their new time machine can prepare for the future by delaying things so they appear at just the right time. This faction is heavy..."
+    },
+    {
+        set: "Excellent Movies, Dudes!",
+        faction: 'Extramorphs',
+        description: "*ping* Six meters. *ping* That can't be. That's inside the deck. It's reading right man. Look! As Extramorphs, you can enjoy terrorizing and forcing your opponents into your unique circle of life: egg, Head Grabber, Chestbreaker, adult, Hive Queen. Again. And again. And again."
+    },
+    {
+        set: "Excellent Movies, Dudes!",
+        faction: 'Wraithrustlers',
+        description: "Who are you going to ring? Or fax? The Wraithrustlers of course! These pursuers of the paranormal are opportunistic, maneuvering Wraiths to where they bother their opponents, and then rounding them up to help themselves the most. And all without cats and dogs living together!"
     }
     
 ]);

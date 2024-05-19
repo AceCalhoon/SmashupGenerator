@@ -395,6 +395,21 @@ var dbmap = Immutable.fromJS([
         faction: 'Russian Fairy Tales',
         description: "The legendary tales of Russia enter Smash Up and bring with them fantastical characters, including the dangerous Baba Yaga. Transformation is in many of these stories, and this faction takes advantage of that. You can change your minions for the better, and your opponents' minions for the worse, faster than they can keep up!"
     },
+    {
+        set: "Smash Up: 10th Anniversary",
+        faction: 'Skeletons',
+        description: "This faction had no official flavor text when it first came out, because the 10th Anniversary set had no rulebook. They bury minions, especially ones from your discard pile, and power them up when they are uncovered."
+    },
+    {
+        set: "Smash Up: 10th Anniversary",
+        faction: 'Mermaids',
+        description: "This faction had no official flavor text when it first came out, because the 10th Anniversary set had no rulebook. They focus on moving other players' minions to bases where you have minions and on reducing minions' contribution to their controllers' total powers."
+    },
+    {
+        set: "Smash Up: 10th Anniversary",
+        faction: 'World Champs',
+        description: "This faction had no official flavor text when it first came out, because the 10th Anniversary set had no rulebook. They focus on drawing cards, playing extra actions and boosting your minions' powers."
+    },
 ]);
 
 module.exports.db = dbmap;
